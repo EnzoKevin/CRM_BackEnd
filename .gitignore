@@ -35,3 +35,7 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Firebase ###
+# Chaves de contas de serviço não devem ser versionadas.
+**/ServiceAccount.json
