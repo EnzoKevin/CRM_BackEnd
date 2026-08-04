@@ -115,10 +115,23 @@ public class BusinessRepository {
         business.setId(snapshot.getLong("id"));
         business.setTitulo(snapshot.getString("titulo"));
         business.setNomeEmpresa(snapshot.getString("nomeEmpresa"));
-        business.setValorContrato(snapshot.getDouble("valorContrato") == null ? null : BigDecimal.valueOf(snapshot.getDouble("valorContrato")));
+        business.setValorContrato(toBigDecimal(snapshot.get("valorContrato")));
         business.setData(snapshot.getString("data"));
         business.setEstagioDeNegociacao(snapshot.getString("estagioDeNegociacao"));
         business.setClienteId(snapshot.getLong("clienteId"));
         return business;
+    }
+
+    private BigDecimal toBigDecimal(Object value) {
+        if (value == null) {
+            return null;
+        }
+        if (value instanceof Number number) {
+            return BigDecimal.valueOf(number.doubleValue());
+        }
+        if (value instanceof String stringValue) {
+            return new BigDecimal(stringValue);
+        }
+        throw new IllegalArgumentException("Valor de contrato inválido no Firestore: " + value);
     }
 }

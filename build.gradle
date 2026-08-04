@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.4.2' // Versão estável e moderna do Spring Boot
+    id 'org.springframework.boot' version '3.4.2'
     id 'io.spring.dependency-management' version '1.1.7'
 }
 
@@ -9,31 +9,24 @@ version = '0.0.1-SNAPSHOT'
 
 java {
     toolchain {
-        // Mudado para o Java 21 (LTS) para garantir total compatibilidade com o SDK do Firebase Admin
         languageVersion = JavaLanguageVersion.of(21) 
     }
 }
 
 repositories {
-    mavenCentral() // O repositório onde o Gradle vai buscar o Firebase
+    mavenCentral()
 }
 
 dependencies {
-    // Starter web oficial e correto para criar APIs REST
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     
-    // DEPENDÊNCIA DO FIREBASE (Baixa o Firebase Admin SDK completo)
+    // SDK do Firebase Admin
     implementation 'com.google.firebase:firebase-admin:9.4.1'
     
-    // Lombok (Configuração correta para escopo de compilação)
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     
-    // Docker Compose para auxiliar no desenvolvimento do MVP
-    developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
-    
-    // Testes configurados corretamente com o starter padrão
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testCompileOnly 'org.projectlombok:lombok'
     testAnnotationProcessor 'org.projectlombok:lombok'

@@ -1,1 +1,11 @@
-services: {}
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: crm-mvp-app
+    ports:
+      - "8081:8081"
+    environment:
+      SERVER_PORT: 8081
+    restart: unless-stopped
