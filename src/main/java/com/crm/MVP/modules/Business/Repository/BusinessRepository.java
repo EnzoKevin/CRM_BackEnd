@@ -127,10 +127,10 @@ public class BusinessRepository {
             return null;
         }
         if (value instanceof Number number) {
-            return BigDecimal.valueOf(number.doubleValue());
+            return BigDecimal.valueOf(number.doubleValue()).stripTrailingZeros();
         }
         if (value instanceof String stringValue) {
-            return new BigDecimal(stringValue);
+            return new BigDecimal(stringValue).stripTrailingZeros();
         }
         throw new IllegalArgumentException("Valor de contrato inválido no Firestore: " + value);
     }

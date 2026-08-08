@@ -1,4 +1,4 @@
-package com.crm.MVP.config;
+package com.crm.MVP.infra.config;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
@@ -17,8 +17,8 @@ public class bd {
 
     @Bean
     public Firestore firestore(
-            @Value("${firebase.credentials.path:file:./src/main/java/com/crm/MVP/config/firebase/ServiceAccount.json}")
-            Resource serviceAccount) throws IOException {
+            @Value("${firebase.credentials.path:file:./src/main/java/com/crm/MVP/infra/config/firebase/ServiceAccount.json}") Resource serviceAccount)
+            throws IOException {
         if (FirebaseApp.getApps().isEmpty()) {
             if (!serviceAccount.exists()) {
                 throw new IllegalStateException(
