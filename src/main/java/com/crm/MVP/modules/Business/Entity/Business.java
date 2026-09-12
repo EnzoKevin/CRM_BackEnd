@@ -10,6 +10,7 @@ public class Business {
 
     private Long id;
     private String titulo;
+    private String contact;
     private String nomeEmpresa;
     private BigDecimal valorContrato;
     private String data;
