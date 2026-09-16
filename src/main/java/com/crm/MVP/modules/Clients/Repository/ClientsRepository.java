@@ -113,6 +113,9 @@ public class ClientsRepository {
         document.put("telefone", contact.getTelefone());
         document.put("empresa", contact.getEmpresa());
         document.put("status", contact.getStatus());
+        document.put("data", contact.getData());
+        document.put("value", contact.getValue());
+        document.put("responsible", contact.getResponsible());
         return document;
     }
 
@@ -125,6 +128,9 @@ public class ClientsRepository {
         contact.setTelefone(snapshot.getString("telefone"));
         contact.setEmpresa(snapshot.getString("empresa"));
         contact.setStatus(snapshot.getString("status"));
+        contact.setData(snapshot.getString("data"));
+        contact.setValue(snapshot.getString("value"));
+        contact.setResponsible(snapshot.getString("responsible"));
         return contact;
     }
 }

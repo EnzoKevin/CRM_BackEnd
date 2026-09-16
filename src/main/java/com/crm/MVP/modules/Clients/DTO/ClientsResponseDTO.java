@@ -12,4 +12,7 @@ public class ClientsResponseDTO {
     private final String telefone;
     private final String empresa;
     private final String Status;
+    private final String data;
+    private final String value;
+    private final String responsible;
 }

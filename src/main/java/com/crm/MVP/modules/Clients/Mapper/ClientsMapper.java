@@ -21,7 +21,11 @@ public class ClientsMapper {
                 contacts.getEmail(),
                 contacts.getTelefone(),
                 contacts.getEmpresa(),
-                contacts.getStatus());
+                contacts.getStatus(),
+                contacts.getData(),
+                contacts.getValue(),
+                contacts.getResponsible()
+        );
     }
 
     public void updateEntity(ClientsRequestDTO dto, Contacts contacts) {
@@ -30,5 +34,8 @@ public class ClientsMapper {
         contacts.setTelefone(dto.getTelefone());
         contacts.setEmpresa(dto.getEmpresa());
         contacts.setStatus(dto.getStatus());
+        contacts.setData(dto.getData());
+        contacts.setValue(dto.getValue());
+        contacts.setResponsible(dto.getResponsible());
     }
 }

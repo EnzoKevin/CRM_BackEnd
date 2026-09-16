@@ -12,5 +12,8 @@ public class Contacts {
     private String email;
     private String telefone;
     private String empresa;
-    private String Status;
+    private String status;
+    private String data;
+    private String value;
+    private String responsible;
 }

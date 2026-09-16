@@ -32,4 +32,17 @@ public class ClientsRequestDTO {
     @NotBlank(message = "O status do cliente não pode ser nulo")
     @Size(max = 100, message = "O status do cliente deve ter no máximo 100 caracteres.")
     private String Status;
+
+    @NotBlank (message = "A data do cliente não pode ser nula")
+    @Size(max = 100, message = "A data do cliente deve ter no máximo 100 caracteres.")
+    private String data;
+
+    @NotBlank (message = "O valor do cliente não pode ser nulo")
+    @Size(max = 100, message = "O valor do cliente deve ter no máximo 100 caracteres.")
+    private String value;
+
+    @NotBlank (message = "O responsável do cliente não pode ser nulo")
+    @Size(max = 100, message = "O responsável do cliente deve ter no máximo 100 caracteres.")
+    private String responsible;
+
 }
